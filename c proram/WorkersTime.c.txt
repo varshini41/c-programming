@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int total_hours_needed, total_days, num_workers;
+
+    printf("Enter the total number of hours needed for the project: ");
+    scanf("%d", &total_hours_needed);
+
+    printf("Enter the total number of days available: ");
+    scanf("%d", &total_days);
+
+    printf("Enter the number of workers: ");
+    scanf("%d", &num_workers);
+
+
+    int training_days = (int)(0.1 * total_days);
+
+    int effective_days = total_days - training_days;
+
+
+    int total_hours = effective_days * num_workers * (8 + 2); 
+    
+    int hours_left = total_hours_needed - total_hours;
+
+    if (hours_left <= 0) {
+        printf("Yes! %d hours left.\n", abs(hours_left));
+    } else {
+        printf("Not enough time! %d hours needed.\n", hours_left);
+    }
+
+    return 0;
+}
