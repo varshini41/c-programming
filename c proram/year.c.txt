@@ -1,0 +1,17 @@
+#include <stdio.h> 
+void find(int number_of_days) 
+{ 
+	int year, week, days; 
+	year = number_of_days / 365; 
+	week = (number_of_days % 365) / 7; 
+	days = (number_of_days % 365) % 7; 
+	printf("Number of years = %d",year); 
+	printf("\nNumber of weeks = %d", week); 
+	printf("\nNumber of days = %d ",days);	 
+} 
+int main() 
+{ 
+	int number_of_days = 1000; 
+	find(number_of_days); 
+	return 0; 
+}
